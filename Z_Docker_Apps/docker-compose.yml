@@ -1,0 +1,16 @@
+﻿version: '3'
+
+services:
+
+  platform_database_mysql:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=platform_db
+      - MYSQL_USER=platform_user
+      - MYSQL_PASSWORD=password
+    volumes:
+      - ./database:/var/lib/mysql
+    ports:
+      - 3306:3306
