@@ -27,11 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.PlatformServices.Applic
 EndProject
 Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "Z_Docker_Apps", "Z_Docker_Apps\Z_Docker_Apps.mdproj", "{A6E945EA-F48B-4BB9-81A9-09BF9A36EA7A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{C83AD723-0380-440B-8F52-63F6137BFDAC}"
-	ProjectSection(SolutionItems) = preProject
-		DB_Update_Script.sql = DB_Update_Script.sql
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,7 +47,6 @@ Global
 		{78633F80-226C-4158-BCEC-77BE5D555252}.Default|Any CPU.ActiveCfg = Debug|Any CPU
 		{78633F80-226C-4158-BCEC-77BE5D555252}.Default|Any CPU.Build.0 = Debug|Any CPU
 		{0AB7492F-BFC5-4BC6-A01C-E688DE4C97BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0AB7492F-BFC5-4BC6-A01C-E688DE4C97BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AB7492F-BFC5-4BC6-A01C-E688DE4C97BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AB7492F-BFC5-4BC6-A01C-E688DE4C97BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0AB7492F-BFC5-4BC6-A01C-E688DE4C97BD}.Default|Any CPU.ActiveCfg = Debug|Any CPU

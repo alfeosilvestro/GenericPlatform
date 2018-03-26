@@ -12,4 +12,7 @@
   <ItemGroup>
     <None Include="docker-compose.yml" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Docker_DB_Update_Script.sql" />
+  </ItemGroup>
 </Project>
