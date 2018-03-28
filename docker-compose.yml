@@ -46,6 +46,12 @@ services:
       - rabbit2:/var/lib/rabbitmq
       - ./conf/:/etc/rabbitmq/
     command:  bash -c "sleep 30; rabbitmq-server;"
+  com.platformservices.applicationuser:
+    image: complatformservicesapplicationuser
+    build:
+      context: .
+      dockerfile: Com.PlatformServices.ApplicationUser/Dockerfile
+
 volumes:
   rabbit1:
     driver: local
@@ -63,4 +69,5 @@ networks:
 #    build:
 #      context: .
 #      dockerfile: Com.PlatformServices.User/Dockerfile
+
 
