@@ -19,3 +19,9 @@
 	- Port : 5006
 
 
+
+Method Name = CamelCase
+Variable for methods = pascalCase
+Private Variables = prefix with underscore(e.g., "_pascalCase" )
+Database Foreign Key naming convension = "<Table_Name>_<Function_Name (optional)>_Id" (e.g., "Sys_Setting_Code_Id" and "Sys_Setting_Code_Doc_Status_Id")
+
