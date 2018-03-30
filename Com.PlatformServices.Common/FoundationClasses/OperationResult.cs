@@ -30,5 +30,12 @@ namespace Com.PlatformServices.Common.FoundationClasses
             get;
             set;
         }
+
+        public int TotalPage { get; set; }
+
+        public int TotalRecords { get; set; }
+
+        public int CurrentPage { get; set; }
+
     }
 }

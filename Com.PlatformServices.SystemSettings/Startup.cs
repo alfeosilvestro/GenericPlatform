@@ -30,10 +30,11 @@ namespace Com.PlatformServices.SystemSettings
             // Use a PostgreSQL database
             var sqlConnectionString = Configuration.GetConnectionString("DefaultConnection");
 
+            // TODO: Update in each application
             services.AddDbContext<AppDbContext>(options => 
                     options.UseMySQL (
                     sqlConnectionString,
-                    b => b.MigrationsAssembly("Com.PlatformServices.SystemSettings") // main project name
+                    b => b.MigrationsAssembly("Com.PlatformServices.SystemSettings") // main project name = Application Specific
                 )
             );
 

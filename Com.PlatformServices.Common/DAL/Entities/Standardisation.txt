@@ -1,0 +1,6 @@
+﻿#Standardisation#
+
+- Database table name = File Name = Class Name
+- Create Specific Folder for your own application in "Com.PlatformServices.Common > DAL > Entities"
+- Create application specific Entity Classes (Files) in your own folder
+- 
