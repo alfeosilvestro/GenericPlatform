@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Com.PlatformServices.Common.DAL.Entities.FileSystem;
@@ -43,9 +44,22 @@ namespace Com.PlatformServices.FileSystem.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<FileStreamResult> Get(int id)
         {
-            return "value";
+            var result = await logic.GetFileById(id);
+
+            if (result.IsSuccessful && result.ResultObject != null)
+            {
+                byte[] data = System.Convert.FromBase64String(result.ResultObject.FileContent);
+                Stream stream = new MemoryStream(data);
+                string downloadFileName = result.ResultObject.FileName + "." + result.ResultObject.FileExtension;
+                var response = File(stream, "application/octet-stream", downloadFileName); // FileStreamResult
+                return response;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         // POST api/values

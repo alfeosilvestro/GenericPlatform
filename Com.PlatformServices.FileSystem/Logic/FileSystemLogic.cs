@@ -6,7 +6,6 @@ using Com.PlatformServices.FileSystem.Repository;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Com.PlatformServices.FileSystem.Logic
@@ -28,6 +27,13 @@ namespace Com.PlatformServices.FileSystem.Logic
 
             ResponseBase<IEnumerable<Sys_File_System>> result = new ResponseBase<IEnumerable<Sys_File_System>>(config.App_Identity);
             result.ResultObject = dbResult;
+            return result;
+        }
+
+        public async Task<OperationResult<Sys_File_System>> GetFileById(int id)
+        {
+            var result = await repo.Get(id);
+
             return result;
         }
     }

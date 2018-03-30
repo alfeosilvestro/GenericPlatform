@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Com.PlatformServices.Common.DAL;
 using Com.PlatformServices.Common.FoundationClasses;
 using Com.PlatformServices.Common.Repository;
@@ -31,7 +32,7 @@ namespace Com.PlatformServices.Common.Repository
             return entities.Where(s => s.IsActive == true).ToList();
         }
 
-        public OperationResult<T> Get(int id)
+        public async Task<OperationResult<T>> Get(int id)
         {
             repoLogger.LogDebug("Get by id " + id, null);
 
@@ -39,7 +40,7 @@ namespace Com.PlatformServices.Common.Repository
             {
                 IsSuccessful = true,
                 Message = "Successfully updated.",
-                ResultObject = (entities.SingleOrDefault(s => s.Id == id && s.IsActive == true))
+                ResultObject = await (entities.SingleOrDefaultAsync(s => s.Id == id && s.IsActive == true))
             };
 
             return result;
