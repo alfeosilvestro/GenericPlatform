@@ -19,6 +19,13 @@ CREATE TABLE `platform_db`.`sys_file_system` (
   `Version` VARCHAR(45) NULL,
   PRIMARY KEY (`Id`));
 
+
+  ALTER TABLE `platform_db`.`sys_file_system` 
+CHANGE COLUMN `Id` `Id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+INSERT INTO `platform_db`.`sys_file_system` (`FileName`, `FileDescription`, `OriginalFileName`, `FileContent`, `ApplicationId`, `Reference1`, `Reference2`, `Reference3`, `CreatedDate`, `CreatedBy`, `UpdatedDate`, `UpdatedBy`, `IsActive`, `Version`) VALUES ('Test File Name', 'Test File Description', 'Test file.txt', '77u/IyBBcHBzIEFzc2lnbm1lbnQgIw0KDQotIEFwcGxpY2F0aW9uIFJlcG9zaXRvcnkgOiBZTA0KCS0gUG9ydCA6IDUwMDEgDQoNCi0gQXBwbGljYXRpb24gVXNlciA6IFNTVw0KCS0gUG9ydCA6IDUwMDIgDQoNCi0gRmlsZSBTeXN0ZW0gOiBBTUsNCgktIFBvcnQgOiA1MDAzIA0KDQotIExvZ2dlciA6IFRLUw0KCS0gUG9ydCA6IDUwMDQgDQoNCi0gU2VjdXJpdHkgOiBUU0ENCgktIFBvcnQgOiA1MDA1IA0KDQotIFN5c3RlbVNldHRpbmdzIDogQU1LDQoJLSBQb3J0IDogNTAwNg0KDQoNCg0KTWV0aG9kIE5hbWUgPSBDYW1lbENhc2UNClZhcmlhYmxlIGZvciBtZXRob2RzID0gcGFzY2FsQ2FzZQ0KUHJpdmF0ZSBWYXJpYWJsZXMgPSBwcmVmaXggd2l0aCB1bmRlcnNjb3JlKGUuZy4sICJfcGFzY2FsQ2FzZSIgKQ0KRGF0YWJhc2UgRm9yZWlnbiBLZXkgbmFtaW5nIGNvbnZlbnNpb24gPSAiPFRhYmxlX05hbWU+XzxGdW5jdGlvbl9OYW1lIChvcHRpb25hbCk+X0lkIiAoZS5nLiwgIlN5c19TZXR0aW5nX0NvZGVfSWQiIGFuZCAiU3lzX1NldHRpbmdfQ29kZV9Eb2NfU3RhdHVzX0lkIikNCg0K', 'abcd', '1', '3', '5', '2018-03-30', 'amk', '2018-03-30', 'amk', '1', 'AH08xo31akqahTTU02pD2Q==');
+
+
   /* Changes made by AMK - End */
 
   /* Changes made by thantsin - Start */
