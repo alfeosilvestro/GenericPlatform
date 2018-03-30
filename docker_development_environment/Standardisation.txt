@@ -1,0 +1,20 @@
+﻿# Apps Assignment #
+
+- Application Repository : YL
+	- Port : 5001 
+
+- Application User : SSW
+	- Port : 5002 
+
+- File System : AMK
+	- Port : 5003 
+
+- Logger : TKS
+	- Port : 5004 
+
+- Security : TSA
+	- Port : 5005 
+
+- SystemSettings : AMK
+	- Port : 5006
+

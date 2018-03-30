@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Docker_DB_Update_Script.sql" />
+    <Content Include="Standardisation.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
