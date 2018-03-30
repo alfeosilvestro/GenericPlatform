@@ -11,6 +11,7 @@ services:
       - MYSQL_USER=platform_user
       - MYSQL_PASSWORD=password
     volumes:
-      - ./database:/var/lib/mysql
+      - #"/c/Users/Docker_Folder_Share/database:/var/lib/mysql" # windows development volume mapping
+      - "./database:/var/lib/mysql" # production volume mapping
     ports:
       - 3306:3306
