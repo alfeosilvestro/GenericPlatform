@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Com.PlatformServices.Common.DAL.Entities.SystemSettings;
+using Com.PlatformServices.Common.DAL.Entities.Logger;
 
 namespace Com.PlatformServices.Common.DAL
 {
@@ -12,6 +13,8 @@ namespace Com.PlatformServices.Common.DAL
         }
 
         public virtual DbSet<Sys_Setting_Code> Codes { get; set; }
+
+        public virtual DbSet<Sys_Logger> Loggers { get; set; }
 
     }
 }
