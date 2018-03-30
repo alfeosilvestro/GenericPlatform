@@ -6,6 +6,7 @@
 [Bb]in/
 packages/
 TestResults/
+docker_development_environment/database/
 
 # globs
 Makefile.in
@@ -39,3 +40,4 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+*.cnf
