@@ -1,5 +1,6 @@
 ﻿/* Changes made by AMK - Start */
 
+DROP TABLE IF EXISTS `platform_db`.`sys_file_system`;
 CREATE TABLE `platform_db`.`sys_file_system` (
   `Id` INT NOT NULL,
   `FileName` VARCHAR(100) NOT NULL,

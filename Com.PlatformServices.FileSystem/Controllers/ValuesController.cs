@@ -2,18 +2,47 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Com.PlatformServices.Common.DAL.Entities.FileSystem;
+using Com.PlatformServices.Common.FoundationClasses;
+using Com.PlatformServices.FileSystem.Configurations;
+using Com.PlatformServices.FileSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace Com.PlatformServices.FileSystem.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class FilesController : Controller
     {
+        private readonly AppSettings config;
+        private readonly IFileSystemRepository repo;
+
+        public FilesController(IOptions<AppSettings> config, IFileSystemRepository repo)
+        {
+            this.config = config.Value;
+            this.repo = repo;
+        }
+
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
+            var dbResult = repo.GetAll();
+
+            ResponseBase<IEnumerable<Sys_File_System>> result = new ResponseBase<IEnumerable<Sys_File_System>>(config.App_Identity);
+            result.ResultObject = dbResult;
+
+            string jsonStringResult = JsonConvert.SerializeObject(result,
+                        Formatting.None,
+                        new JsonSerializerSettings()
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        });
+
+            return jsonStringResult;
+
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
