@@ -1,3 +1,3 @@
 ﻿# Scope # 
 
-- Logger Create / Update / Delete / List with paging
+- Logger Create/ Delete / List with paging, Search
