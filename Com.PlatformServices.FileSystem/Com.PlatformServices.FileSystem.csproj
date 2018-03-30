@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Logic\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Com.PlatformServices.Common\Com.PlatformServices.Common.csproj" />
     <ProjectReference Include="..\Com.PlatformServices.Communication\Com.PlatformServices.Communication.csproj" />
   </ItemGroup>

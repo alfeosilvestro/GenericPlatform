@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Com.PlatformServices.Common.DAL.Entities.FileSystem;
 using Com.PlatformServices.Common.FoundationClasses;
 using Com.PlatformServices.FileSystem.Configurations;
+using Com.PlatformServices.FileSystem.Logic;
 using Com.PlatformServices.FileSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -16,22 +17,18 @@ namespace Com.PlatformServices.FileSystem.Controllers
     public class FilesController : Controller
     {
         private readonly AppSettings config;
-        private readonly IFileSystemRepository repo;
+        private readonly IFileSystemLogic logic;
 
-        public FilesController(IOptions<AppSettings> config, IFileSystemRepository repo)
+        public FilesController(IFileSystemLogic logic)
         {
-            this.config = config.Value;
-            this.repo = repo;
+            this.logic = logic;
         }
 
         // GET api/values
         [HttpGet]
         public string Get()
         {
-            var dbResult = repo.GetAll();
-
-            ResponseBase<IEnumerable<Sys_File_System>> result = new ResponseBase<IEnumerable<Sys_File_System>>(config.App_Identity);
-            result.ResultObject = dbResult;
+            var result = logic.GetFilesByPage("", 1);
 
             string jsonStringResult = JsonConvert.SerializeObject(result,
                         Formatting.None,

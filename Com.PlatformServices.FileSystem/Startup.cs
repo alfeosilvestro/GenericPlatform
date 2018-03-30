@@ -50,7 +50,7 @@ namespace Com.PlatformServices.FileSystem
             //services.AddScoped<GetMeToMyMechanic.Repository.Declaration.ILocationInformationRepository, GetMeToMyMechanic.Repository.Definition.LocationInformationRepository>();
 
             //// Register for library
-            //services.AddScoped<GetMeToMyMechanic.Lib.Declaration.IEventRecordService, GetMeToMyMechanic.Lib.Definition.EventRecordService>();
+            services.AddScoped<Com.PlatformServices.FileSystem.Logic.IFileSystemLogic, Com.PlatformServices.FileSystem.Logic.FileSystemLogic>();
             //services.AddScoped<GetMeToMyMechanic.Lib.Declaration.ILocationInformationService, GetMeToMyMechanic.Lib.Definition.LocationInformationService>();
 
         }
