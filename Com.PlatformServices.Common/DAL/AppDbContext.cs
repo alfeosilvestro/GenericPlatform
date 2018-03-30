@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Com.PlatformServices.Common.DAL.Entities.SystemSettings;
 using Com.PlatformServices.Common.DAL.Entities.FileSystem;
 using Com.PlatformServices.Common.DAL.Entities.Security;
+using Com.PlatformServices.Common.DAL.Entities.Logger;
 
 namespace Com.PlatformServices.Common.DAL
 {
@@ -19,6 +20,8 @@ namespace Com.PlatformServices.Common.DAL
         public virtual DbSet<Sys_Role> Roles { get; set; }
 
         public virtual DbSet<Sys_Permission> Permissions { get; set; }
+
+        public virtual DbSet<Sys_Logger> Loggers { get; set; }
 
     }
 }
