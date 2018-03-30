@@ -40,8 +40,10 @@ CREATE TABLE `Sys_Setting_Code` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Sys_Setting_Code`
+-- Dumping data for table `Sys_Permission`
 --
+
+
 
 LOCK TABLES `Sys_Setting_Code` WRITE;
 /*!40000 ALTER TABLE `Sys_Setting_Code` DISABLE KEYS */;
