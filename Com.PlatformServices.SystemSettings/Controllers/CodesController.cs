@@ -9,6 +9,7 @@ using Com.PlatformServices.SystemSettings.Repository;
 using Com.PlatformServices.Common.DAL.Entities.SystemSettings;
 using Com.PlatformServices.Common.FoundationClasses;
 using Newtonsoft.Json;
+using Com.PlatformServices.SystemSettings.Logic;
 
 namespace Com.PlatformServices.SystemSettings.Controllers
 {
@@ -16,23 +17,18 @@ namespace Com.PlatformServices.SystemSettings.Controllers
     [Route("api/[controller]")]
     public class CodesController : Controller
     {
-        private readonly AppSettings config;
-        private readonly ICodeRepository repo;
+        private readonly ICodesLogic logic;
 
-        public CodesController(IOptions<AppSettings> config, ICodeRepository repo)
+        public CodesController(ICodesLogic logic)
         {
-            this.config = config.Value;
-            this.repo = repo;
+            this.logic = logic;
         }
 
         // GET api/values
         [HttpGet]
         public string Get()
         {
-            var dbResult = repo.GetAll();
-
-            ResponseBase<IEnumerable<Sys_Setting_Code>> result = new ResponseBase<IEnumerable<Sys_Setting_Code>>(config.App_Identity);
-            result.ResultObject = dbResult;
+            var result = logic.GetCodesByPage("", 1);
 
             string jsonStringResult = JsonConvert.SerializeObject(result, 
                         Formatting.None,

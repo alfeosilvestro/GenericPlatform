@@ -16,7 +16,6 @@ namespace Com.PlatformServices.FileSystem.Controllers
     [Route("api/[controller]")]
     public class FilesController : Controller
     {
-        private readonly AppSettings config;
         private readonly IFileSystemLogic logic;
 
         public FilesController(IFileSystemLogic logic)
