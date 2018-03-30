@@ -13,5 +13,9 @@ namespace Com.PlatformServices.Common.DAL
 
         public virtual DbSet<Sys_Setting_Code> Codes { get; set; }
 
+        public virtual DbSet<Sys_Role> Roles { get; set; }
+
+        public virtual DbSet<Sys_Permission> Permissions { get; set; }
+
     }
 }
