@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Com.PlatformServices.Common.DAL.Entities.SystemSettings;
 using Com.PlatformServices.Common.DAL.Entities.FileSystem;
+using Com.PlatformServices.Common.DAL.Entities.Security;
 
 namespace Com.PlatformServices.Common.DAL
 {

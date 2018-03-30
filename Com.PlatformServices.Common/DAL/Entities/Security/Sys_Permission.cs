@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Com.PlatformServices.Common.FoundationClasses;
 
-namespace Com.PlatformServices.Common.DAL.Entities.SystemSettings
+namespace Com.PlatformServices.Common.DAL.Entities.Security
 {
     [Table("Sys_Permission")]
     public class Sys_Permission : BaseEntity

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Com.PlatformServices.Common.FoundationClasses;
 
-namespace Com.PlatformServices.Common.DAL.Entities.SystemSettings
+namespace Com.PlatformServices.Common.DAL.Entities.Security
 {
     [Table("Sys_Role")]
     public class Sys_Role : BaseEntity
