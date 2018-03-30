@@ -78,7 +78,7 @@ CREATE TABLE `platform_db`.`Sys_Permission` (
 --
 /* Changes made by thantsin - End */
 
-  /* Changes made by AMK - Start */
+  /* Changes made by TKS - Start */
 
 DROP TABLE IF EXISTS `sys_logger`;
 CREATE TABLE IF NOT EXISTS `sys_logger` (
