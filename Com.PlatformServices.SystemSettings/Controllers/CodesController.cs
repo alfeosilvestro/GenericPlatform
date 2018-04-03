@@ -10,6 +10,7 @@ using Com.PlatformServices.Common.DAL.Entities.SystemSettings;
 using Com.PlatformServices.Common.FoundationClasses;
 using Newtonsoft.Json;
 using Com.PlatformServices.SystemSettings.Logic;
+using Com.PlatformServices.SystemSettings.Requests;
 
 namespace Com.PlatformServices.SystemSettings.Controllers
 {
@@ -74,14 +75,16 @@ namespace Com.PlatformServices.SystemSettings.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromForm]CodesRequestModel value)
         {
+
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromForm]CodesRequestModel value)
         {
+
         }
 
         // DELETE api/values/5
