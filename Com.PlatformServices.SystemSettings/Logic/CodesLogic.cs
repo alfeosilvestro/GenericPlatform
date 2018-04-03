@@ -21,11 +21,11 @@ namespace Com.PlatformServices.SystemSettings.Logic
             this.repo = repo;
         }
 
-        public ResponseBase<IEnumerable<Sys_Setting_Code>> GetCodesByPage(string keyword, int page)
+        public async Task<ResponseBase<PagedResult<Sys_Setting_Code>>> GetCodesByPage(string keyword, int page)
         {
-            var dbResult = repo.GetAll();
+            var dbResult = await repo.GetPage(keyword, page);
 
-            ResponseBase<IEnumerable<Sys_Setting_Code>> result = new ResponseBase<IEnumerable<Sys_Setting_Code>>(config.App_Identity);
+            ResponseBase<PagedResult<Sys_Setting_Code>> result = new ResponseBase<PagedResult<Sys_Setting_Code>>(config.App_Identity);
             result.ResultObject = dbResult;
 
             return result;

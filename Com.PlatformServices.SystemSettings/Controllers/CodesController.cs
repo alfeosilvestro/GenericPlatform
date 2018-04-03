@@ -26,9 +26,9 @@ namespace Com.PlatformServices.SystemSettings.Controllers
 
         // GET api/values
         [HttpGet]
-        public string Get()
+        public async Task<string> Get(string keyword = "", int page = 1)
         {
-            var result = logic.GetCodesByPage("", 1);
+            var result = await logic.GetCodesByPage(keyword, page);
 
             string jsonStringResult = JsonConvert.SerializeObject(result, 
                         Formatting.None,
