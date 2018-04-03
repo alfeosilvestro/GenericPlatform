@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="FoundationClasses\" />
     <Folder Include="DAL\Entities\SystemSettings\" />
     <Folder Include="DAL\Repository\" />
   </ItemGroup>

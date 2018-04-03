@@ -12,6 +12,6 @@ namespace Com.PlatformServices.Common.Repository
         Task<OperationResult<T>> Delete(T entity);
         Task<OperationResult<T>> Get(int id);
         IEnumerable<T> GetAll();
-        IEnumerable<T> GetPage(string keyword, int totalRecords, int page);
+        Task<PagedResult<T>> GetPage(string keyword, int page, int totalRecords = 10);
     }
 }

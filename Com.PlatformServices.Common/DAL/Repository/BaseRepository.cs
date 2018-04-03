@@ -105,10 +105,24 @@ namespace Com.PlatformServices.Common.Repository
             return result;
         }
 
-        public virtual IEnumerable<T> GetPage(string keyword, int totalRecords, int page)
+        public virtual async Task<PagedResult<T>> GetPage(string keyword, int page, int totalRecords = 10)
         {
-            return entities.Where(e => e.IsActive == true)
-                           .Skip((totalRecords * page) - totalRecords);
+            var records = await entities.Where(e => e.IsActive == true)
+                           .Skip((totalRecords * page) - totalRecords)
+                           .Take(totalRecords)
+                           .ToListAsync<T>();
+
+            int count = await entities.CountAsync(e => e.IsActive == true);
+
+            var result = new PagedResult<T>()
+            {
+                Records = records,
+                TotalPage = (count + totalRecords - 1) / totalRecords,
+                CurrentPage = page,
+                TotalRecords = count
+            };
+
+            return result;
         }
     }
 }

@@ -26,9 +26,9 @@ namespace Com.PlatformServices.FileSystem.Controllers
 
         // GET api/values
         [HttpGet]
-        public string Get(string keyword = "", int page = 1)
+        public async Task<string> Get(string keyword = "", int page = 1)
         {
-            var result = logic.GetFilesByPage(keyword, page);
+            var result = await logic.GetFilesByPage(keyword, page);
 
             string jsonStringResult = JsonConvert.SerializeObject(result,
                         Formatting.None,

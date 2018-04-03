@@ -21,11 +21,11 @@ namespace Com.PlatformServices.FileSystem.Logic
             this.repo = repo;
         }
 
-        public ResponseBase<IEnumerable<Sys_File_System>> GetFilesByPage(string keyword, int page)
+        public async Task<ResponseBase<PagedResult<Sys_File_System>>> GetFilesByPage(string keyword, int page)
         {
-            var dbResult = repo.GetAll();
+            var dbResult = await repo.GetPage(keyword, page);
 
-            ResponseBase<IEnumerable<Sys_File_System>> result = new ResponseBase<IEnumerable<Sys_File_System>>(config.App_Identity);
+            ResponseBase<PagedResult<Sys_File_System>> result = new ResponseBase<PagedResult<Sys_File_System>>(config.App_Identity);
             result.ResultObject = dbResult;
             return result;
         }
