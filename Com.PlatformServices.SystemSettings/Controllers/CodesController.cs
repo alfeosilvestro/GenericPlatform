@@ -42,9 +42,18 @@ namespace Com.PlatformServices.SystemSettings.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<string> Get(int id)
         {
-            return "value";
+            var result = await logic.GetCodeById(id);
+
+            string jsonStringResult = JsonConvert.SerializeObject(result,
+                        Formatting.None,
+                        new JsonSerializerSettings()
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        });
+
+            return jsonStringResult;
         }
 
         // GET api/values/5

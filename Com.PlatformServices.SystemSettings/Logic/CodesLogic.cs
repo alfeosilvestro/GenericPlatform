@@ -21,6 +21,16 @@ namespace Com.PlatformServices.SystemSettings.Logic
             this.repo = repo;
         }
 
+        public async Task<ResponseBase<OperationResult<Sys_Setting_Code>>> GetCodeById(int id)
+        {
+            var dbResult = await repo.Get(id);
+
+            ResponseBase<OperationResult<Sys_Setting_Code>> result = new ResponseBase<OperationResult<Sys_Setting_Code>>(config.App_Identity);
+            result.ResultObject = dbResult;
+
+            return result;
+        }
+
         public async Task<ResponseBase<PagedResult<Sys_Setting_Code>>> GetCodesByPage(string keyword, int page)
         {
             var dbResult = await repo.GetPage(keyword, page);

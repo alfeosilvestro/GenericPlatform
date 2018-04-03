@@ -10,5 +10,7 @@ namespace Com.PlatformServices.SystemSettings.Logic
         Task<ResponseBase<PagedResult<Sys_Setting_Code>>> GetCodesByPage(string keyword, int page);
 
         ResponseBase<IEnumerable<Sys_Setting_Code>> GetCodesByParentId(int parentId);
+
+        Task<ResponseBase<OperationResult<Sys_Setting_Code>>> GetCodeById(int id);
     }
 }
