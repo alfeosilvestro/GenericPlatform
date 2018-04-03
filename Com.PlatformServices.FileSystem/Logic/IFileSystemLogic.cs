@@ -11,5 +11,6 @@ namespace Com.PlatformServices.FileSystem.Logic
 
         Task<OperationResult<Sys_File_System>> GetFileById(int id);
         Task<OperationResult<Sys_File_System>> DeleteFileById(int id);
+        Task<List<Sys_File_System>> GetFileByReference(string applicationId, string reference1, string reference2, string reference3);
     }
 }

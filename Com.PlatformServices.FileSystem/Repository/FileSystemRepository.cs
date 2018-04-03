@@ -18,6 +18,20 @@ namespace Com.PlatformServices.FileSystem.Repository
 
         }
 
+        public async Task<List<Sys_File_System>> GetFileByReference(string applicationId, string reference1, string reference2, string reference3)
+        {
+            var filesMatchesReference = this.entities
+                .Where(e => e.IsActive == true &&
+                e.ApplicationId == applicationId &&
+                (e.Reference1 == reference1 || reference1 == "" || reference1 == null) &&
+                (e.Reference2 == reference2 || reference2 == "" || reference2 == null) &&
+                (e.Reference3 == reference3 || reference3 == "" || reference3 == null)
+                ).ToList();
+
+            return filesMatchesReference;
+
+        }
+
         public override async Task<PagedResult<Sys_File_System>> GetPage(string keyword, int page, int totalRecords = 10)
         {
             if (string.IsNullOrEmpty(keyword.Trim()))

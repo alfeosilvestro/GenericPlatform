@@ -64,6 +64,8 @@ namespace Com.PlatformServices.FileSystem
             }
 
             app.UseMvc();
+            
+            
         }
     }
 }

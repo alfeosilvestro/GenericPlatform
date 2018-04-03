@@ -57,5 +57,12 @@ namespace Com.PlatformServices.FileSystem.Logic
                 };
             }
         }
+
+        public async Task<List<Sys_File_System>> GetFileByReference(string applicationId, string reference1, string reference2, string reference3)
+        {
+            var result = await repo.GetFileByReference(applicationId, reference1, reference2, reference3);
+
+            return result;
+        }
     }
 }
