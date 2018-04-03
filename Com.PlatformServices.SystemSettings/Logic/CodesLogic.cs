@@ -30,5 +30,12 @@ namespace Com.PlatformServices.SystemSettings.Logic
 
             return result;
         }
+
+        public ResponseBase<IEnumerable<Sys_Setting_Code>> GetCodesByParentId(int parentId)
+        {
+            return new ResponseBase<IEnumerable<Sys_Setting_Code>>(config.App_Identity) {
+                ResultObject = repo.GetCodesByParentId(parentId)
+            };
+        }
     }
 }

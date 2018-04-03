@@ -5,6 +5,7 @@ using Com.PlatformServices.Common.DAL;
 using Microsoft.Extensions.Logging;
 using Com.PlatformServices.Common.FoundationClasses;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Com.PlatformServices.SystemSettings.Repository
 {
@@ -14,6 +15,12 @@ namespace Com.PlatformServices.SystemSettings.Repository
         base(context, loggerFactory, "Sys_Setting_Code_Repository")
         {
 
+        }
+
+        public IEnumerable<Sys_Setting_Code> GetCodesByParentId(int parentId)
+        {
+            return this.entities.Where(e =>
+            e.Parent.Id == parentId).ToList();
         }
 
         public override async Task<PagedResult<Sys_Setting_Code>> GetPage(string keyword, int page, int totalRecords = 10)

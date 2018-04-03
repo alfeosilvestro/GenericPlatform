@@ -7,6 +7,6 @@ namespace Com.PlatformServices.SystemSettings.Repository
 {
     public interface ICodeRepository : IBaseRepository<Sys_Setting_Code>
     {
-        
+        IEnumerable<Sys_Setting_Code> GetCodesByParentId(int parentId);
     }
 }

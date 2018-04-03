@@ -47,6 +47,22 @@ namespace Com.PlatformServices.SystemSettings.Controllers
             return "value";
         }
 
+        // GET api/values/5
+        [HttpGet("{parentId}/children")]
+        public string GetChildren(int parentId)
+        {
+            var result = logic.GetCodesByParentId(parentId);
+
+            string jsonStringResult = JsonConvert.SerializeObject(result,
+                        Formatting.None,
+                        new JsonSerializerSettings()
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        });
+
+            return jsonStringResult;
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
