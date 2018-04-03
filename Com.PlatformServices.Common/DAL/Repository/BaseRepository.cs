@@ -86,7 +86,7 @@ namespace Com.PlatformServices.Common.Repository
             return result;
         }
 
-        public OperationResult<T> Delete(T entity)
+        public async Task<OperationResult<T>> Delete(T entity)
         {
             if (entity == null)
             {
@@ -94,11 +94,11 @@ namespace Com.PlatformServices.Common.Repository
                 throw new ArgumentNullException("entity");
             }
             entities.Remove(entity);
-            this.DbContext.SaveChanges();
+            var saveResult = await this.DbContext.SaveChangesAsync();
 
             var result = new OperationResult<T>()
             {
-                IsSuccessful = true,
+                IsSuccessful = (saveResult > 1),
                 Message = "Successfully deleted."
             };
 

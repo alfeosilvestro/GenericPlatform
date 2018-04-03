@@ -10,5 +10,6 @@ namespace Com.PlatformServices.FileSystem.Logic
         ResponseBase<IEnumerable<Sys_File_System>> GetFilesByPage(string keyword, int page);
 
         Task<OperationResult<Sys_File_System>> GetFileById(int id);
+        Task<OperationResult<Sys_File_System>> DeleteFileById(int id);
     }
 }

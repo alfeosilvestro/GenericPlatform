@@ -26,9 +26,9 @@ namespace Com.PlatformServices.FileSystem.Controllers
 
         // GET api/values
         [HttpGet]
-        public string Get()
+        public string Get(string keyword = "", int page = 1)
         {
-            var result = logic.GetFilesByPage("", 1);
+            var result = logic.GetFilesByPage(keyword, page);
 
             string jsonStringResult = JsonConvert.SerializeObject(result,
                         Formatting.None,
@@ -76,8 +76,9 @@ namespace Com.PlatformServices.FileSystem.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
+            var result = logic.DeleteFileById(id);
         }
     }
 }

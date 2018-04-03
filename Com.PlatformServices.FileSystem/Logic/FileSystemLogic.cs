@@ -36,5 +36,26 @@ namespace Com.PlatformServices.FileSystem.Logic
 
             return result;
         }
+
+        public async Task<OperationResult<Sys_File_System>> DeleteFileById(int id)
+        {
+            var fileToDeleteResult = await repo.Get(id);
+
+            if (fileToDeleteResult.IsSuccessful && fileToDeleteResult.ResultObject != null)
+            {
+                var deleteResult = await repo.Delete(fileToDeleteResult.ResultObject);
+
+                return deleteResult;
+            }
+            else
+            {
+                return new OperationResult<Sys_File_System>()
+                {
+                    IsSuccessful = false,
+                    Message = "File not found",
+                    Error = new System.IO.FileNotFoundException("File with provided id, " + id + ", does not exist in database")
+                };
+            }
+        }
     }
 }
