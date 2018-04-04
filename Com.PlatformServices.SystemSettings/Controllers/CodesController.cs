@@ -27,50 +27,38 @@ namespace Com.PlatformServices.SystemSettings.Controllers
 
         // GET api/values
         [HttpGet]
-        public async Task<string> Get(string keyword = "", int page = 1)
+        public async Task<JsonResult> Get(string keyword = "", int page = 1)
         {
             var result = await logic.GetCodesByPage(keyword, page);
 
-            string jsonStringResult = JsonConvert.SerializeObject(result, 
-                        Formatting.None,
-                        new JsonSerializerSettings()
-                        {
-                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                        });
-
-            return jsonStringResult;
+            return new JsonResult(result, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public async Task<string> Get(int id)
+        public async Task<JsonResult> Get(int id)
         {
             var result = await logic.GetCodeById(id);
 
-            string jsonStringResult = JsonConvert.SerializeObject(result,
-                        Formatting.None,
-                        new JsonSerializerSettings()
-                        {
-                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                        });
-
-            return jsonStringResult;
+            return new JsonResult(result, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
         }
 
         // GET api/values/5
         [HttpGet("{parentId}/children")]
-        public string GetChildren(int parentId)
+        public JsonResult GetChildren(int parentId)
         {
             var result = logic.GetCodesByParentId(parentId);
 
-            string jsonStringResult = JsonConvert.SerializeObject(result,
-                        Formatting.None,
-                        new JsonSerializerSettings()
-                        {
-                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                        });
-
-            return jsonStringResult;
+            return new JsonResult(result, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
         }
 
         // POST api/values

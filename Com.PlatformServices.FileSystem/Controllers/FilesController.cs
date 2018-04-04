@@ -27,20 +27,12 @@ namespace Com.PlatformServices.FileSystem.Controllers
 
         // GET api/values
         [HttpGet]
-        public async Task<string> Get(string keyword = "", int page = 1)
+        public async Task<JsonResult> Get(string keyword = "", int page = 1)
         {
             var result = await logic.GetFilesByPage(keyword, page);
 
-            string jsonStringResult = JsonConvert.SerializeObject(result,
-                        Formatting.None,
-                        new JsonSerializerSettings()
-                        {
-                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                        });
-
-            return jsonStringResult;
-
-            //return new string[] { "value1", "value2" };
+            return Json(result);
+            
         }
 
         // GET api/values/5
@@ -65,18 +57,12 @@ namespace Com.PlatformServices.FileSystem.Controllers
 
         // GET api/files/reference/{applicationId}/{reference1}/{reference2}/{reference3}
         [HttpGet("reference")]
-        public async Task<string> GetWithReference(string applicationId, string reference1="", string reference2 = "", string reference3 = "")
+        public async Task<JsonResult> GetWithReference(string applicationId, string reference1="", string reference2 = "", string reference3 = "")
         {
             var result = await logic.GetFileByReference(applicationId, reference1, reference2, reference3);
 
-            string jsonStringResult = JsonConvert.SerializeObject(result,
-                        Formatting.None,
-                        new JsonSerializerSettings()
-                        {
-                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                        });
+            return Json(result);
 
-            return jsonStringResult;
         }
 
         // POST api/values

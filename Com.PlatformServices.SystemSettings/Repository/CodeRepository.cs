@@ -36,6 +36,7 @@ namespace Com.PlatformServices.SystemSettings.Repository
             );
 
             var recordList = records.OrderBy(e => e.Name)
+            .OrderBy(e => e.CreatedDate)
             .Skip((totalRecords * page) - totalRecords)
             .Take(totalRecords)
             .ToList();

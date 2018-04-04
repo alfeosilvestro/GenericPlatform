@@ -108,6 +108,7 @@ namespace Com.PlatformServices.Common.Repository
         public virtual async Task<PagedResult<T>> GetPage(string keyword, int page, int totalRecords = 10)
         {
             var records = await entities.Where(e => e.IsActive == true)
+                           .OrderBy(e => e.CreatedDate)
                            .Skip((totalRecords * page) - totalRecords)
                            .Take(totalRecords)
                            .ToListAsync<T>();
