@@ -12,4 +12,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Com.PlatformServices.Common\Com.PlatformServices.Common.csproj" />
+    <ProjectReference Include="..\Com.PlatformServices.Communication\Com.PlatformServices.Communication.csproj" />
+  </ItemGroup>
+
 </Project>

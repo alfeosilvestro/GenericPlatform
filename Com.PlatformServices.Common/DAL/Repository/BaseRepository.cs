@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Com.PlatformServices.Common.DAL;
 using Com.PlatformServices.Common.FoundationClasses;
 using Com.PlatformServices.Common.Repository;
@@ -31,7 +32,7 @@ namespace Com.PlatformServices.Common.Repository
             return entities.Where(s => s.IsActive == true).ToList();
         }
 
-        public OperationResult<T> Get(int id)
+        public async Task<OperationResult<T>> Get(int id)
         {
             repoLogger.LogDebug("Get by id " + id, null);
 
@@ -39,7 +40,7 @@ namespace Com.PlatformServices.Common.Repository
             {
                 IsSuccessful = true,
                 Message = "Successfully updated.",
-                ResultObject = (entities.SingleOrDefault(s => s.Id == id && s.IsActive == true))
+                ResultObject = await (entities.SingleOrDefaultAsync(s => s.Id == id && s.IsActive == true))
             };
 
             return result;
@@ -85,7 +86,7 @@ namespace Com.PlatformServices.Common.Repository
             return result;
         }
 
-        public OperationResult<T> Delete(T entity)
+        public async Task<OperationResult<T>> Delete(T entity)
         {
             if (entity == null)
             {
@@ -93,21 +94,36 @@ namespace Com.PlatformServices.Common.Repository
                 throw new ArgumentNullException("entity");
             }
             entities.Remove(entity);
-            this.DbContext.SaveChanges();
+            var saveResult = await this.DbContext.SaveChangesAsync();
 
             var result = new OperationResult<T>()
             {
-                IsSuccessful = true,
+                IsSuccessful = (saveResult > 1),
                 Message = "Successfully deleted."
             };
 
             return result;
         }
 
-        public virtual IEnumerable<T> GetPage(string keyword, int totalRecords, int page)
+        public virtual async Task<PagedResult<T>> GetPage(string keyword, int page, int totalRecords = 10)
         {
-            return entities.Where(e => e.IsActive == true)
-                           .Skip((totalRecords * page) - totalRecords);
+            var records = await entities.Where(e => e.IsActive == true)
+                           .OrderBy(e => e.CreatedDate)
+                           .Skip((totalRecords * page) - totalRecords)
+                           .Take(totalRecords)
+                           .ToListAsync<T>();
+
+            int count = await entities.CountAsync(e => e.IsActive == true);
+
+            var result = new PagedResult<T>()
+            {
+                Records = records,
+                TotalPage = (count + totalRecords - 1) / totalRecords,
+                CurrentPage = page,
+                TotalRecords = count
+            };
+
+            return result;
         }
     }
 }

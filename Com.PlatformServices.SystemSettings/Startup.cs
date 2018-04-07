@@ -50,7 +50,7 @@ namespace Com.PlatformServices.SystemSettings
             //services.AddScoped<GetMeToMyMechanic.Repository.Declaration.ILocationInformationRepository, GetMeToMyMechanic.Repository.Definition.LocationInformationRepository>();
 
             //// Register for library
-            //services.AddScoped<GetMeToMyMechanic.Lib.Declaration.IEventRecordService, GetMeToMyMechanic.Lib.Definition.EventRecordService>();
+            services.AddScoped<Com.PlatformServices.SystemSettings.Logic.ICodesLogic, Com.PlatformServices.SystemSettings.Logic.CodesLogic>();
             //services.AddScoped<GetMeToMyMechanic.Lib.Declaration.ILocationInformationService, GetMeToMyMechanic.Lib.Definition.LocationInformationService>();
 
         }

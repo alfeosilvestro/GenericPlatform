@@ -9,6 +9,8 @@ using Com.PlatformServices.SystemSettings.Repository;
 using Com.PlatformServices.Common.DAL.Entities.SystemSettings;
 using Com.PlatformServices.Common.FoundationClasses;
 using Newtonsoft.Json;
+using Com.PlatformServices.SystemSettings.Logic;
+using Com.PlatformServices.SystemSettings.Requests;
 
 namespace Com.PlatformServices.SystemSettings.Controllers
 {
@@ -16,51 +18,61 @@ namespace Com.PlatformServices.SystemSettings.Controllers
     [Route("api/[controller]")]
     public class CodesController : Controller
     {
-        private readonly AppSettings config;
-        private readonly ICodeRepository repo;
+        private readonly ICodesLogic logic;
 
-        public CodesController(IOptions<AppSettings> config, ICodeRepository repo)
+        public CodesController(ICodesLogic logic)
         {
-            this.config = config.Value;
-            this.repo = repo;
+            this.logic = logic;
         }
 
         // GET api/values
         [HttpGet]
-        public string Get()
+        public async Task<JsonResult> Get(string keyword = "", int page = 1)
         {
-            var dbResult = repo.GetAll();
+            var result = await logic.GetCodesByPage(keyword, page);
 
-            ResponseBase<IEnumerable<Sys_Setting_Code>> result = new ResponseBase<IEnumerable<Sys_Setting_Code>>(config.App_Identity);
-            result.ResultObject = dbResult;
-
-            string jsonStringResult = JsonConvert.SerializeObject(result, 
-                        Formatting.None,
-                        new JsonSerializerSettings()
-                        {
-                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                        });
-
-            return jsonStringResult;
+            return new JsonResult(result, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<JsonResult> Get(int id)
         {
-            return "value";
+            var result = await logic.GetCodeById(id);
+
+            return new JsonResult(result, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+        }
+
+        // GET api/values/5
+        [HttpGet("{parentId}/children")]
+        public JsonResult GetChildren(int parentId)
+        {
+            var result = logic.GetCodesByParentId(parentId);
+
+            return new JsonResult(result, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromForm]CodesRequestModel value)
         {
+
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromForm]CodesRequestModel value)
         {
+
         }
 
         // DELETE api/values/5

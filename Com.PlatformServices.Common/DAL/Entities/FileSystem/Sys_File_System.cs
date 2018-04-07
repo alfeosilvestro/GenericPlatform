@@ -46,5 +46,7 @@ namespace Com.PlatformServices.Common.DAL.Entities.FileSystem
         /// </summary>
         public string Reference3 { get; set; }
 
+        [StringLength(5, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        public string FileExtension { get; set; }
     }
 }
