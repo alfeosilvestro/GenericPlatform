@@ -18,6 +18,7 @@ namespace Com.PlatformServices.Common.DAL.Entities.SystemUser
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
+        [StringLength(100, ErrorMessage = "100 Characters max")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
