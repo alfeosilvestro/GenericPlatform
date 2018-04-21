@@ -52,6 +52,18 @@ services:
     ports:
       - "80"
 
+  com.tenderplatform.webapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  com.genericplatform.webapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
 volumes:
   rabbit1:
     driver: local
@@ -71,4 +83,6 @@ networks:
 #      - ASPNETCORE_ENVIRONMENT=Development
 #    ports:
 #      - "80"
+
+
 

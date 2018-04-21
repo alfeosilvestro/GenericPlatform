@@ -52,6 +52,18 @@ services:
       context: .
       dockerfile: Com.PlatformServices.ApplicationUser/Dockerfile
 
+  com.tenderplatform.webapp:
+    image: comtenderplatformwebapp
+    build:
+      context: .
+      dockerfile: ../Com.TenderPlatform.WebApp/Dockerfile
+
+  com.genericplatform.webapp:
+    image: comgenericplatformwebapp
+    build:
+      context: .
+      dockerfile: Com.GenericPlatform.WebApp/Dockerfile
+
 volumes:
   rabbit1:
     driver: local
@@ -69,5 +81,7 @@ networks:
 #    build:
 #      context: .
 #      dockerfile: Com.PlatformServices.User/Dockerfile
+
+
 
 
