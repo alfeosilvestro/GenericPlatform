@@ -1,3 +1,6 @@
 $(function () {
-    $('#mainTable').editableTableWidget();
+    $('#requirementsTable').editableTableWidget();
+    $('#slaTable').editableTableWidget();
+    $('#penaltyTable').editableTableWidget();
+    $('#attachmentTable').editableTableWidget();
 });
