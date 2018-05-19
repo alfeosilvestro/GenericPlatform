@@ -1,4 +1,9 @@
-﻿@{
+﻿@using Com.EzTender.Common
+@using Com.EzTender.ViewModels.Common
+@using Com.EzTender.ViewModels.Sys_Setting_Code
+@model ResponseBase<PagedViewModel<VM_Sys_Setting_Code>>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -29,18 +34,15 @@
                 </ul>
             </div>
             <div class="body">
-                <div class="alert alert-success">
-                    <strong>Well done!</strong> You successfully read this important alert message.
-                </div>
-                <div class="alert alert-info">
-                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-                </div>
-                <div class="alert alert-warning">
-                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
-                </div>
-                <div class="alert alert-danger">
-                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
-                </div>
+
+                @foreach(var item in Model.ResultObject.Records)
+                {
+                    <div class="alert alert-success">
+                        <strong>@item.Name</strong> 
+                        @item.Description
+                    </div>
+                }
+
             </div>
         </div>
     </div>

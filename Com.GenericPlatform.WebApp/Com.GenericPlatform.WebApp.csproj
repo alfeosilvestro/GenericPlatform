@@ -7,11 +7,20 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.11" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Com.EzTender.Common\Com.EzTender.Common.csproj" />
+    <ProjectReference Include="..\Com.EzTender.Repository\Com.EzTender.Repository.csproj" />
+    <ProjectReference Include="..\Com.EzTender.ViewModels\Com.EzTender.ViewModels.csproj" />
+    <ProjectReference Include="..\Com.GenericPlatform.Services\Com.GenericPlatform.Services.csproj" />
   </ItemGroup>
 
 </Project>

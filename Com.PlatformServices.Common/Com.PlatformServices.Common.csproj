@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="DAL\Entities\SystemSettings\" />
-    <Folder Include="DAL\Repository\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.2" />

@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Com.PlatformServices.Common.FoundationClasses;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Com.PlatformServices.Common.FoundationClasses;
 
 namespace Com.PlatformServices.Common.Repository
 {
-    public interface IBaseRepository<T> where T : BaseEntity
+    public interface IBaseEntity<T> where T : BaseEntity
     {
         OperationResult<T> Add(T entity);
         OperationResult<T> Update(T entity);
