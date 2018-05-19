@@ -32,15 +32,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{F0884279-EC8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.GenericPlatform.WebApp", "Com.GenericPlatform.WebApp\Com.GenericPlatform.WebApp.csproj", "{B3A646D9-E1D9-45B6-9A25-E7C06E50E8E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.GenericPlatform.Services", "Com.GenericPlatform.Services\Com.GenericPlatform.Services.csproj", "{1F87A206-B1B8-464C-903B-6E6897B95749}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.GenericPlatform.Services", "Com.GenericPlatform.Services\Com.GenericPlatform.Services.csproj", "{1F87A206-B1B8-464C-903B-6E6897B95749}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.EzTender.Repository", "Com.EzTender.Repository\Com.EzTender.Repository.csproj", "{C9EC2992-6AC6-4AA2-8828-87E085808652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.EzTender.Repository", "Com.EzTender.Repository\Com.EzTender.Repository.csproj", "{C9EC2992-6AC6-4AA2-8828-87E085808652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.EzTender.DataModel", "Com.EzTender.DataModel\Com.EzTender.DataModel.csproj", "{CD591E15-E42C-42AB-A7F0-17BAA5FFAC09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.EzTender.DataModel", "Com.EzTender.DataModel\Com.EzTender.DataModel.csproj", "{CD591E15-E42C-42AB-A7F0-17BAA5FFAC09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.EzTender.Common", "Com.EzTender.Common\Com.EzTender.Common.csproj", "{336D6925-95C3-4492-9CE6-8532ACDBEAA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.EzTender.Common", "Com.EzTender.Common\Com.EzTender.Common.csproj", "{336D6925-95C3-4492-9CE6-8532ACDBEAA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.EzTender.ViewModels", "Com.EzTender.ViewModels\Com.EzTender.ViewModels.csproj", "{514FA33E-91FD-42C3-9F78-8406CFD62D33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.EzTender.ViewModels", "Com.EzTender.ViewModels\Com.EzTender.ViewModels.csproj", "{514FA33E-91FD-42C3-9F78-8406CFD62D33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.GenericPlatform.WebAdmin", "Com.GenericPlatform.WebAdmin\Com.GenericPlatform.WebAdmin.csproj", "{530C7202-253C-40B7-8215-08A5690B7235}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +145,12 @@ Global
 		{514FA33E-91FD-42C3-9F78-8406CFD62D33}.Default|Any CPU.Build.0 = Debug|Any CPU
 		{514FA33E-91FD-42C3-9F78-8406CFD62D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{514FA33E-91FD-42C3-9F78-8406CFD62D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{530C7202-253C-40B7-8215-08A5690B7235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{530C7202-253C-40B7-8215-08A5690B7235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{530C7202-253C-40B7-8215-08A5690B7235}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{530C7202-253C-40B7-8215-08A5690B7235}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{530C7202-253C-40B7-8215-08A5690B7235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{530C7202-253C-40B7-8215-08A5690B7235}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +171,7 @@ Global
 		{CD591E15-E42C-42AB-A7F0-17BAA5FFAC09} = {F0884279-EC88-4765-9966-9716759003BC}
 		{336D6925-95C3-4492-9CE6-8532ACDBEAA1} = {F0884279-EC88-4765-9966-9716759003BC}
 		{514FA33E-91FD-42C3-9F78-8406CFD62D33} = {F0884279-EC88-4765-9966-9716759003BC}
+		{530C7202-253C-40B7-8215-08A5690B7235} = {F0884279-EC88-4765-9966-9716759003BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98BBFB05-EF96-430F-A93F-EA20210AC693}
