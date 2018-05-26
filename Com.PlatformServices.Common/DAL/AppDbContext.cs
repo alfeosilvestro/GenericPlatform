@@ -5,6 +5,7 @@ using Com.PlatformServices.Common.DAL.Entities.FileSystem;
 using Com.PlatformServices.Common.DAL.Entities.Security;
 using Com.PlatformServices.Common.DAL.Entities.Logger;
 using Com.PlatformServices.Common.DAL.Entities.SystemUser;
+using Com.PlatformServices.Common.DAL.Entities.BudgetMetal;
 
 namespace Com.PlatformServices.Common.DAL
 {
@@ -24,6 +25,8 @@ namespace Com.PlatformServices.Common.DAL
         public virtual DbSet<Sys_User_Role> UserRoles { get; set; }
 
         public virtual DbSet<Sys_Logger> Loggers { get; set; }
+
+        public virtual DbSet<BM_Gallery> Galleries { get; set; }
 
     }
 }

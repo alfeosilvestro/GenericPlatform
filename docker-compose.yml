@@ -64,6 +64,12 @@ services:
       context: .
       dockerfile: Com.GenericPlatform.WebApp/Dockerfile
 
+  com.platformservices.budgetmetal:
+    image: complatformservicesbudgetmetal
+    build:
+      context: .
+      dockerfile: Com.PlatformServices.BudgetMetal/Dockerfile
+
 volumes:
   rabbit1:
     driver: local
@@ -81,6 +87,7 @@ networks:
 #    build:
 #      context: .
 #      dockerfile: Com.PlatformServices.User/Dockerfile
+
 
 
 

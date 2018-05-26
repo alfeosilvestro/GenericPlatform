@@ -64,6 +64,12 @@ services:
     ports:
       - "80"
 
+  com.platformservices.budgetmetal:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
 volumes:
   rabbit1:
     driver: local
@@ -83,6 +89,7 @@ networks:
 #      - ASPNETCORE_ENVIRONMENT=Development
 #    ports:
 #      - "80"
+
 
 
 

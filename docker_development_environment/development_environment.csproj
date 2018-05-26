@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Db_Updates\20180330_update.sql" />
+    <Content Include="Db_Updates\20180510_update.sql" />
     <Content Include="Docker_DB_Update_Script.sql" />
     <Content Include="Standardisation.txt" />
   </ItemGroup>
