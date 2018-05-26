@@ -70,6 +70,12 @@ services:
     ports:
       - "80"
 
+  com.genericplatform.webadmin:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
 volumes:
   rabbit1:
     driver: local

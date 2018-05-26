@@ -64,6 +64,12 @@ services:
       context: .
       dockerfile: Com.GenericPlatform.WebApp/Dockerfile
 
+  com.genericplatform.webadmin:
+    image: comgenericplatformwebadmin
+    build:
+      context: .
+      dockerfile: ../Com.GenericPlatform.WebAdmin/Dockerfile
+
   com.platformservices.budgetmetal:
     image: complatformservicesbudgetmetal
     build:
