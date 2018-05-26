@@ -44,6 +44,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.EzTender.ViewModels", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.GenericPlatform.WebAdmin", "Com.GenericPlatform.WebAdmin\Com.GenericPlatform.WebAdmin.csproj", "{530C7202-253C-40B7-8215-08A5690B7235}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.PlatformServices.BudgetMetal", "Com.PlatformServices.BudgetMetal\Com.PlatformServices.BudgetMetal.csproj", "{B2391EAF-01FA-42CD-8CFE-CF10220BBC82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,12 @@ Global
 		{530C7202-253C-40B7-8215-08A5690B7235}.Default|Any CPU.Build.0 = Debug|Any CPU
 		{530C7202-253C-40B7-8215-08A5690B7235}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{530C7202-253C-40B7-8215-08A5690B7235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2391EAF-01FA-42CD-8CFE-CF10220BBC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2391EAF-01FA-42CD-8CFE-CF10220BBC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2391EAF-01FA-42CD-8CFE-CF10220BBC82}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2391EAF-01FA-42CD-8CFE-CF10220BBC82}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{B2391EAF-01FA-42CD-8CFE-CF10220BBC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2391EAF-01FA-42CD-8CFE-CF10220BBC82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -172,6 +180,7 @@ Global
 		{336D6925-95C3-4492-9CE6-8532ACDBEAA1} = {F0884279-EC88-4765-9966-9716759003BC}
 		{514FA33E-91FD-42C3-9F78-8406CFD62D33} = {F0884279-EC88-4765-9966-9716759003BC}
 		{530C7202-253C-40B7-8215-08A5690B7235} = {F0884279-EC88-4765-9966-9716759003BC}
+		{B2391EAF-01FA-42CD-8CFE-CF10220BBC82} = {41648DB0-1BA1-4A14-AB7C-D65791F0B321}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98BBFB05-EF96-430F-A93F-EA20210AC693}

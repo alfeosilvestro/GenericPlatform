@@ -64,6 +64,12 @@ services:
     ports:
       - "80"
 
+  com.platformservices.budgetmetal:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
   com.genericplatform.webadmin:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
