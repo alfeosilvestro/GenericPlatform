@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Com.GenericPlatform.WebApp.Models;
 using Com.GenericPlatform.Services.Code;
+using Com.PlatformServices.Common.DAL.Entities.BudgetMetal;
 
 namespace Com.GenericPlatform.WebApp.Controllers
 {

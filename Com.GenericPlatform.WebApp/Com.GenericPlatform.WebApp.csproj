@@ -21,6 +21,7 @@
     <ProjectReference Include="..\Com.EzTender.Repository\Com.EzTender.Repository.csproj" />
     <ProjectReference Include="..\Com.EzTender.ViewModels\Com.EzTender.ViewModels.csproj" />
     <ProjectReference Include="..\Com.GenericPlatform.Services\Com.GenericPlatform.Services.csproj" />
+    <ProjectReference Include="..\Com.PlatformServices.Common\Com.PlatformServices.Common.csproj" />
   </ItemGroup>
 
 </Project>

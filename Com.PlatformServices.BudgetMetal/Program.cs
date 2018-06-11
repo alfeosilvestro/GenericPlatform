@@ -19,8 +19,9 @@ namespace Com.PlatformServices.BudgetMetal
 
         public static IWebHost BuildWebHost(string[] args) =>
              WebHost.CreateDefaultBuilder(args)
-                 .UseStartup<Startup>()
-                 .UseUrls("http://localhost:5007/")
-                 .Build();
+                 .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseStartup<Startup>()
+                .Build();
     }
 }

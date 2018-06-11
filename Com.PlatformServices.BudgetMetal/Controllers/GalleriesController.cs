@@ -11,6 +11,7 @@ using Com.PlatformServices.Common.FoundationClasses;
 using Newtonsoft.Json;
 using Com.PlatformServices.BudgetMetal.Logic;
 using Com.PlatformServices.BudgetMetal.Requests;
+using System.IO;
 
 namespace Com.PlatformServices.BudgetMetal.Controllers
 {
@@ -46,6 +47,25 @@ namespace Com.PlatformServices.BudgetMetal.Controllers
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             });
+        }
+
+        // GET api/values/5
+        [HttpGet("download/{id}")]
+        public async Task<FileResult> Download(int id)
+        {
+            var bm_gallery = await logic.GetGalleryById(id);
+            //var bm_gallery = await _context.bm_gallery
+            //    .SingleOrDefaultAsync(m => m.Id == fileid);
+            if (bm_gallery == null)
+            {
+                return null;
+            }
+
+            var fileByeArray = bm_gallery.ResultObject.ResultObject.DownloadableImage;
+            string fileName = (bm_gallery.ResultObject.ResultObject.Name).Replace(" ", "_").Trim() + ".zip";
+            var readStream = new MemoryStream(Convert.FromBase64String(fileByeArray));
+            var mimeType = "application/zip";
+            return File(readStream, mimeType, fileName);
         }
 
         // GET api/values/5

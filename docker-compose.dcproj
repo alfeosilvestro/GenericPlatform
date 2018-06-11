@@ -6,7 +6,7 @@
     <ProjectGuid>{0AB7492F-BFC5-4BC6-A01C-E688DE4C97BD}</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>http://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>com.platformservices.user</DockerServiceName>
+    <DockerServiceName>com.platformservices.budgetmetal</DockerServiceName>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
   </PropertyGroup>
   <ItemGroup>
