@@ -1,19 +1,46 @@
 ﻿DROP TABLE IF EXISTS `platform_db`.`BM_Gallery`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `platform_db`.`BM_Gallery` (
-  `Id` INT(11) NOT NULL AUTO_INCREMENT,
-  `Name` VARCHAR(100) NULL DEFAULT NULL,
-  `Description` longtext NULL DEFAULT NULL,
+
+
+--
+-- Table structure for table `bm_gallery`
+--
+
+CREATE TABLE `bm_gallery` (
+  `Id` int(11) NOT NULL,
+  `Name` varchar(100) DEFAULT NULL,
+  `Description` longtext,
   `ThumbnailImage` longblob NOT NULL,
   `DetailImage` longblob NOT NULL,
   `DownloadableImage` longblob NOT NULL,
-  `CreatedDate` DATETIME NULL DEFAULT NULL,
-  `CreatedBy` VARCHAR(45) NULL DEFAULT NULL,
-  `UpdatedDate` DATETIME NULL DEFAULT NULL,
-  `UpdatedBy` VARCHAR(45) NULL DEFAULT NULL,
-  `IsActive` BIT(1) NULL DEFAULT b'1',
-  `Version` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`Id`));
-  
-  /*!40101 SET character_set_client = @saved_cs_client */;
+  `CreatedDate` datetime DEFAULT NULL,
+  `CreatedBy` varchar(45) DEFAULT NULL,
+  `UpdatedDate` datetime DEFAULT NULL,
+  `UpdatedBy` varchar(45) DEFAULT NULL,
+  `IsActive` bit(1) DEFAULT b'1',
+  `Version` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `bm_gallery`
+--
+ALTER TABLE `bm_gallery`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `bm_gallery`
+--
+ALTER TABLE `bm_gallery`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
