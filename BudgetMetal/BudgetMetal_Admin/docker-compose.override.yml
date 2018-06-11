@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  budgetmetal_admin:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    image: budgetmetaladmin
+    build:
+      context: .
+      dockerfile: BudgetMetal_Admin/Dockerfile

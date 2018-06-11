@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetMetal_Admin", "BudgetMetal_Admin\BudgetMetal_Admin.csproj", "{04042836-E305-42C3-B332-AC526DF3B26E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{ECBCEE9E-43FF-4E50-8648-4619DDECDCA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04042836-E305-42C3-B332-AC526DF3B26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04042836-E305-42C3-B332-AC526DF3B26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04042836-E305-42C3-B332-AC526DF3B26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04042836-E305-42C3-B332-AC526DF3B26E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECBCEE9E-43FF-4E50-8648-4619DDECDCA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECBCEE9E-43FF-4E50-8648-4619DDECDCA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECBCEE9E-43FF-4E50-8648-4619DDECDCA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECBCEE9E-43FF-4E50-8648-4619DDECDCA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BD07161-C582-4271-A9D6-53BF9E07D42E}
+	EndGlobalSection
+EndGlobal
