@@ -1,20 +1,32 @@
-version: "3"
+#version: "3"
+#services:
+#  com.platformservices.budgetmetal:
+#    image: complatformservicesbudgetmetal
+#    build:
+#      context: .
+#      dockerfile: Com.PlatformServices.BudgetMetal/Dockerfile
+#    network_mode: "host"
+#    ports:
+#      - 9909:80
+
+#networks:
+#    dockernet:
+#        external: true
+
+version: '3'
+
 services:
   com.platformservices.budgetmetal:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
     image: complatformservicesbudgetmetal
     build:
       context: .
       dockerfile: Com.PlatformServices.BudgetMetal/Dockerfile
-    network_mode: "host"
     ports:
       - 9909:80
 
 networks:
     dockernet:
         external: true
-
-
-
-
-
 

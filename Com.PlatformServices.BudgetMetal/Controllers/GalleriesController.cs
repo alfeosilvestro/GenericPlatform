@@ -26,6 +26,18 @@ namespace Com.PlatformServices.BudgetMetal.Controllers
         }
 
         // GET api/values
+        [HttpGet("test")]
+        public async Task<JsonResult> test(string keyword = "", int page = 1)
+        {
+            var result = page;
+
+            return new JsonResult(result, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+        }
+
+        // GET api/values
         [HttpGet]
         public async Task<JsonResult> Get(string keyword = "", int page = 1)
         {

@@ -3,6 +3,11 @@ WORKDIR /app
 EXPOSE 80
 
 FROM microsoft/aspnetcore-build:2.0 AS build
+FROM microsoft/aspnetcore:2.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
 COPY GenericPlatform.sln ./
 COPY Com.PlatformServices.BudgetMetal/Com.PlatformServices.BudgetMetal.csproj Com.PlatformServices.BudgetMetal/

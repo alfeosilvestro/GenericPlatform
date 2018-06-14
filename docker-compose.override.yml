@@ -1,4 +1,16 @@
-version: "3"
+#version: "3"
+#services:
+#  com.platformservices.budgetmetal:
+#    environment:
+#      - ASPNETCORE_ENVIRONMENT=Development
+#    image: complatformservicesbudgetmetal
+#    build:
+#      context: .
+#      dockerfile: Com.PlatformServices.BudgetMetal/Dockerfile
+
+
+version: '3'
+
 services:
   com.platformservices.budgetmetal:
     environment:
